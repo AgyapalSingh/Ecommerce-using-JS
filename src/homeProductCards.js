@@ -1,4 +1,5 @@
 import { homeQuantityToggle } from "./homeQuantityToggle";
+import { addToCart } from "./addToCart";
 
 const productContainer = document.querySelector("#productContainer");
 const productTemplate = document.querySelector("#productTemplate");
@@ -32,6 +33,12 @@ export const showProductContainer = (products) => {
       .querySelector(".stockElement")
       .addEventListener("click", (event) => {
         homeQuantityToggle(event, id, stock);
+      });
+
+    productClone
+      .querySelector(".add-to-cart-button")
+      .addEventListener("click", (event) => {
+        addToCart(event, id, stock);
       });
 
     // Append krta productContainer
